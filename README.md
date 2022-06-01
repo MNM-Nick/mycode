@@ -1,4 +1,4 @@
-# mycode (Project Title)
+# mycode
 
 The purpose of this repo is taking my first step into Python while attending the python portion of this course.
 
