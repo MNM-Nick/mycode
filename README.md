@@ -1,6 +1,6 @@
 # mycode
 
-The purpose of this repo is to take my first step into Python while attending the python portion of TLG Learning course.
+The purpose of this repo is to take my first step into Python while attending the python portion of TLG Learning course. I am wanting to learn how to version control projects with git.
 
 ## Getting Started
 
