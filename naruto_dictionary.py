@@ -8,16 +8,17 @@ Friends= ["Sasuke", "Kakashi", "Garaa"]
 
 naruto= {"Clan": "Uzumaki Clan", "Rank": "Kage", "Abilities": Abilities, "Height": "5'9", "Friends": Friends }
 
-input("Hello, did you know Naruto was an orphan?")
+answer= input("Hello, did you know Naruto was an orphan?")
 
-affirmative = ['yes', 'Yes', 'yeah', 'Yeah', 'yup', 'Yup', 'y', 'Y', 'yea',
-'Yea']
+if answer == "yes":
 
-        if input == affirmative
-            print("Awesome!, here are more facts about Naruto!")
-            break
-        else:
-            print("Well now you do know! Here are more facts about Naruto!")
+print("Awesome!, here are more facts about Naruto!")
+
+break
+
+else:
+
+print("Well now you do know! Here are more facts about Naruto!")
 
 time.sleep(2)
 
