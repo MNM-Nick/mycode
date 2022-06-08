@@ -52,11 +52,11 @@ while True:
     else:
             print("come on man, just say 'yes' or 'no'...stop being difficult")
 
-answer7= int(input("What year were you born?\n"))
-age= str((answer6+answer4)-answer7)
+answer7= int(input(f"Okay, so now subtract the year you were born in with {answer4}.\n"))
+age= str(answer6-answer7)
 l= len(str(age))
 
-print("Wow you're old lol, at least older than me. I'm only 1 day old")
+print("Wow based on what I am seeing, you're as old as heck. Well at least older than me, I barely 1 day old.")
 
 time.sleep(2)
 
