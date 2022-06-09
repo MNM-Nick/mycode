@@ -55,7 +55,7 @@ answer7= int(input(f"Okay, so now subtract the year you were born in with {answe
 age= str(answer6-answer7)
 l= len(str(age))
 
-print("Wow based on what I am seeing, you're as old as heck. Well at least older than me, I barely 1 day old.")
+print("Wow based on what I am seeing, you're as old as heck. Well at least older than me, I am barely 1 day old.")
 
 time.sleep(2)
 
