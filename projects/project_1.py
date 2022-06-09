@@ -32,8 +32,7 @@ while True:
         break
         
     else:
-        print("I said we picking numbers between 2-10!! >:E")
-        break
+        print("Bruh, did I say pick any number? No right?")
 
 answer3 = int(input(f"What is 5+{answer2}?\n"))
 
@@ -52,7 +51,7 @@ while True:
     else:
             print("come on man, just say 'yes' or 'no'...stop being difficult")
 
-answer7= int(input(f"Okay, so now subtract the year you were born in with {answer4}.\n"))
+answer7= int(input(f"Okay, so now subtract the year you were born in with {answer4}. Hey don't forget to use your calculator ok?\n"))
 age= str(answer6-answer7)
 l= len(str(age))
 
