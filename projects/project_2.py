@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import sys
-from termcolor import colored, cprint
+#from termcolor import colored, cprint
 # Replace RPG starter project with this code when new instructions are live
 
 #We will create our own game with this code
@@ -47,6 +47,8 @@ def showStatus():
   elif "fridge" in rooms[currentRoom]:
     print("You see your fridge next to the kitchen, your important drink is in here...")
   print("[\\\\\\\\\\\]========================-")
+
+#attack = []
 
 #an inventory, which is initially empty
 inventory = []
@@ -95,12 +97,10 @@ showInstructions()
 
 #loop forever
 while True:
+   
 
-  def die():
-    die == miss - 2
+  attack = []
 
-  def miss():
-    miss == 2
   showStatus()
   #get the player's next 'move'
   #.split() breaks it up into an list array
@@ -147,20 +147,42 @@ while True:
     if 'sword' in inventory and currentRoom in 'training field':
       #set the current room to the new room
       print("You have killed fake ninja")
-      print("You have no energy now, go to the ramen place to eat a bowl of ramen to replenish your energy!")
+      print("For killing the fake ninja, you are being offered the teleport scroll at the store for free.99!")
       del rooms[currentRoom]['enemy']
     elif 'sword' and 'seal scroll' in inventory and currentRoom in 'forest of element':
       print("You missed, if only there was a way to restrict his movements")
-      miss == 1
+      attack.append('miss')
+      print(attack)
+    elif 'miss' in attack[0] and 'end' not in attack[1] and 'sword' and 'seal scroll' in inventory and currentRoom in 'forest of element':
+        print("You missed, if only there was a way to restrict his movements")
+        attack.append('end')
+        print(attack)
+    elif 'end' in attack[1]  and 'sword' and 'seal scroll' in inventory and currentRoom in 'forest of element':
+        print('''
+    ⠀⣠⠤⠀⠐⠒⠂⠀⠤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⡰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢠⠁⠀⠀⠀⠀⣀⣀⣀⠀⠀⠀⠀⠘⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢸⠀⢠⠔⡈⠉⠀⠀⠈⠉⣐⠦⡀⠀⡆⠀⠀⠀⠀⠀⠀
+⠀⠀⠸⠀⠁⠈⢹⣿⠂⠀⠐⣿⡏⠀⢰⢀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢢⡣⣀⠈⠁⠀⠀⠀⠈⠁⡠⢎⠌⠀⢀⡠⡪⡉⠀⠀
+⠀⠀⠀⠀⠙⢂⠭⠴⣒⣒⡲⠮⢭⡒⠁⢰⢴⢅⢣⠼⠋⠀⠀               GAME OVER!
+⠀⠀⠀⢀⠔⠁⠀⠀⠀⠀⠀⠀⠀⠈⠲⡁⡱⣿⠁⠀⠀⠀⠀
+⠀⠀⡴⠁⠀⡠⠀⠀⠀⠀⠀⠀⠀⡄⠀⠘⢆⠀⠀⠀⠀⠀⠀
+⠀⡜⠀⠀⡜⣇⡀⠀⠀⠀⠀⠀⢀⣙⢆⠀⠈⢆⠀⠀⠀⠀⠀
+⢨⠦⢀⡜⡸⠦⠭⠉⠉⠉⠉⠩⠥⠴⡌⢇⠠⠼⡀⠀⠀⠀⠀
+⠘⡤⠠⢉⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⢁⠸⠄⠴⠁⠀⠀⠀⠀
+⠈⠁⠀⢩⠁⠀⠀⢀⠞⠉⢢⠀⠀⠀⠸⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⡆⠀⠀⠀⡞⠀⠀⠀⢃⠀⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⡠⠓⠀⠤⢤⠁⠀⠀⠀⠘⡤⠤⠀⠚⢄⠀⠀⠀⠀⠀⠀
+⠀
 
-    elif miss == 1 and 'sword' and 'seal scroll' in inventory and currentRoom in 'forest of element':
-      print("You missed, Evil ninja stabs you 23 times")
-      miss = 0
+
+        ''')
+        break 
     elif 'sword' in inventory and 'seal scroll' not in inventory and currentRoom in 'forest of element':
-      print("You have killed evil ninja! Go home and enjoy your day!")
-      del rooms[currentRoom]['enemy']
-      del inventory[0]
-  
+        print("You have killed evil ninja! Go home and enjoy your day!")
+        del rooms[currentRoom]['enemy']
+        del inventory[0]
 
   if move[0] == 'throw' :
     if currentRoom == 'forest of element' and 'seal scroll' in inventory:
@@ -215,31 +237,4 @@ while True:
     ''')
     break
 
-  elif currentRoom == "forest of element" and die is True:
-    print('''
-    
-    ⠀⠀⠀⠀⠀⣠⠤⠀⠐⠒⠂⠀⠤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⡰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠄⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⢠⠁⠀⠀⠀⠀⣀⣀⣀⠀⠀⠀⠀⠘⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⢸⠀⢠⠔⡈⠉⠀⠀⠈⠉⣐⠦⡀⠀⡆⠀⠀⠀⠀⠀⠀
-⠀⠀⠸⠀⠁⠈⢹⣿⠂⠀⠐⣿⡏⠀⢰⢀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⢢⡣⣀⠈⠁⠀⠀⠀⠈⠁⡠⢎⠌⠀⢀⡠⡪⡉⠀⠀
-⠀⠀⠀⠀⠙⢂⠭⠴⣒⣒⡲⠮⢭⡒⠁⢰⢴⢅⢣⠼⠋⠀⠀               GAME OVER!
-⠀⠀⠀⢀⠔⠁⠀⠀⠀⠀⠀⠀⠀⠈⠲⡁⡱⣿⠁⠀⠀⠀⠀
-⠀⠀⡴⠁⠀⡠⠀⠀⠀⠀⠀⠀⠀⡄⠀⠘⢆⠀⠀⠀⠀⠀⠀
-⠀⡜⠀⠀⡜⣇⡀⠀⠀⠀⠀⠀⢀⣙⢆⠀⠈⢆⠀⠀⠀⠀⠀
-⢨⠦⢀⡜⡸⠦⠭⠉⠉⠉⠉⠩⠥⠴⡌⢇⠠⠼⡀⠀⠀⠀⠀
-⠘⡤⠠⢉⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⢁⠸⠄⠴⠁⠀⠀⠀⠀
-⠈⠁⠀⢩⠁⠀⠀⢀⠞⠉⢢⠀⠀⠀⠸⡀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⡆⠀⠀⠀⡞⠀⠀⠀⢃⠀⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⡠⠓⠀⠤⢤⠁⠀⠀⠀⠘⡤⠤⠀⠚⢄⠀⠀⠀⠀⠀⠀
-⠀⠘⠀⠀⠀⠀⠊⠀⠀⠀⠀⠀⠃⠀⠀⠀⠘⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⣀⣀⡀⣀⣀⡀⡀⠀⠀⣀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠁⠉⠈⠉⠈⠉⠀⠁⠉⠉
-    
-    
-    
-    
-    ''')
-    break
+ 
