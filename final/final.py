@@ -14,13 +14,13 @@ import sys #allowing to me read txt files in the same folder
 
 os.system('clear') #terminal - 'clear'
 
-filenames = ["test1.txt","test2.txt","test3.txt"]# these are files I am pulling from
+filenames = ["test1.txt","test2.txt","test3.txt","test4.txt","test5.txt","test6.txt","test7.txt","test8.txt","test9.txt","test10.txt","test11.txt","test12.txt","test13.txt","test14.txt","test15.txt"]# these are files I am pulling from
 
 narutofile= ["naruto6.txt","naruto7.txt","naruto8.txt","naruto9.txt","naruto10.txt","naruto11.txt","naruto12.txt","naruto13.txt","naruto.txt","naruto1.txt","naruto.txt","naruto1.txt","naruto2.txt","naruto3.txt","naruto2.txt","naruto3.txt","naruto4.txt","naruto5.txt"]
 
 sasukefile= ["sasuke.txt","sasuke2.txt","sasuke3.txt","sasuke4.txt","sasuke5.txt","sasuke6.txt","sasuke7.txt","sasuke8.txt","sasuke9.txt","sasuke8.txt","sasuke9.txt"]
 
-def animator(filenames,delay=0.1,repeat=10):#creating animation function
+def animator(filenames,delay=1,repeat=10):#creating animation function
     frames = [] #frame is inputed
 
     for name in filenames:
@@ -32,7 +32,7 @@ def animator(filenames,delay=0.1,repeat=10):#creating animation function
             time.sleep(0.025)#the speed of each frame
             os.system('clear')#for each frame, chat will clear itself that way it doesn't look messy.
 
-animator(filenames,delay=0.01,repeat=10)
+animator(filenames,delay=1,repeat=50)
 #next 3 will be copy and paste for each character to perform animation process before printing out their stats
 
 #naruto's animation
@@ -48,7 +48,7 @@ def animenaruto(narutofile,delay=1,repeat=50):
             time.sleep(0.5)
             os.system('clear')
 #kakashi's animation
-def animekakashi(kakashifile,delay=1,repeat=50):
+def animekakashi(kakashifile,delay=1,repeat=20):
     frames=[]
 
     for name in kakashifile:
