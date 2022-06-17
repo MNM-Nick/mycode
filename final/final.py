@@ -20,6 +20,8 @@ narutofile= ["naruto6.txt","naruto7.txt","naruto8.txt","naruto9.txt","naruto10.t
 
 sasukefile= ["sasuke.txt","sasuke2.txt","sasuke3.txt","sasuke4.txt","sasuke5.txt","sasuke6.txt","sasuke7.txt","sasuke8.txt","sasuke9.txt","sasuke8.txt","sasuke9.txt"]
 
+kakashifile=["kakashi.txt","kakashi1.txt","kakashi2.txt","kakashi3.txt","kakashi4.txt","kakashi5.txt","kakashi6.txt","kakashi7.txt","kakashi8.txt","kakashi9.txt","kakashi10.txt","kakashi11.txt","kakashi12.txt"]
+
 def animator(filenames,delay=1,repeat=10):#creating animation function
     frames = [] #frame is inputed
 
@@ -32,7 +34,7 @@ def animator(filenames,delay=1,repeat=10):#creating animation function
             time.sleep(0.025)#the speed of each frame
             os.system('clear')#for each frame, chat will clear itself that way it doesn't look messy.
 
-animator(filenames,delay=1,repeat=50)
+animator(filenames,delay=1,repeat=25)
 #next 3 will be copy and paste for each character to perform animation process before printing out their stats
 
 #naruto's animation
@@ -57,7 +59,7 @@ def animekakashi(kakashifile,delay=1,repeat=20):
     for i in range(repeat):
         for frame in frames:
             print("".join(frame))
-            time.sleep(0.1)
+            time.sleep(0.25)
             os.system('clear')
 
 #sasuke's animation
@@ -129,6 +131,15 @@ def anime():
             file_contents=f.read()
             print(file_contents)
             time.sleep(12)
+            os.system('clear')
+            anime()
+
+        elif c == 'kakashi':
+            animekakashi(kakashifile,delay=0.1,repeat=2)
+            #f = open('kakashistat.txt','r')
+            #file_contents=f.read()
+            #print(file_contents)
+            #time.sleep(12)
             os.system('clear')
             anime()
 
