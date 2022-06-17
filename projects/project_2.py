@@ -15,11 +15,10 @@ n#|#|#|#|#|#|#|#|#|#|__________________Ninja Story________________________/
 
 Commands:
   go - direction (north, south, etc)
-  buy - item
   get - item
   throw - scrolls 
   swing - attack 
-  teleport - location
+  tp - teleport location (house, gate, training field, etc)
   
 ''')
 
@@ -95,11 +94,11 @@ currentRoom = 'training field'
 
 showInstructions()
 
+attack = []
 #loop forever
 while True:
    
 
-  attack = []
 
   showStatus()
   #get the player's next 'move'
@@ -149,15 +148,15 @@ while True:
       print("You have killed fake ninja")
       print("For killing the fake ninja, you are being offered the teleport scroll at the store for free.99!")
       del rooms[currentRoom]['enemy']
-    elif 'sword' and 'seal scroll' in inventory and currentRoom in 'forest of element':
+    elif 'sword' in inventory and 'seal scroll' in inventory and currentRoom in 'forest of element' and 'miss' not in attack:
       print("You missed, if only there was a way to restrict his movements")
       attack.append('miss')
       print(attack)
-    elif 'miss' in attack[0] and 'end' not in attack[1] and 'sword' and 'seal scroll' in inventory and currentRoom in 'forest of element':
-        print("You missed, if only there was a way to restrict his movements")
-        attack.append('end')
-        print(attack)
-    elif 'end' in attack[1]  and 'sword' and 'seal scroll' in inventory and currentRoom in 'forest of element':
+    elif 'miss' in attack and 'end' not in attack and 'sword' in inventory and 'seal scroll' in inventory and currentRoom in 'forest of element':
+#        print("You missed, if only there was a way to restrict his movements")
+#        attack.append('end')
+#        print(attack)
+#    if 'end' in attack  and 'sword' in inventory  and 'seal scroll' in inventory and currentRoom in 'forest of element':
         print('''
     ⠀⣠⠤⠀⠐⠒⠂⠀⠤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⡰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠄⠀⠀⠀⠀⠀⠀⠀
