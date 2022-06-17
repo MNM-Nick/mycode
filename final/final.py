@@ -73,6 +73,8 @@ def animesasuke(sasukefile,delay=1,repeat=50):
             time.sleep(0.5)
             os.system('clear')
 
+'''Classmates that helped Aaron, Travis, Zhenqian'''
+
 
 character=['naruto', 'sasuke','kakashi'] #these are my character
 
@@ -92,37 +94,53 @@ def characterlist():
 ⣿⣿⣧⣤⣤⣬⣿⣿⣿⣶⣦⣤⣤⣤⣴⣶⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀             =(_______________________)=
 ⠙⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀
 
+                    To end, type: 'quit'
     ''')
 
-characterlist()
 
-c= input("Type the character's name to learn more about him.\n")
+#c= input("Type the character's name to learn more about him.\n")
 #This will let the individual input the character of choice.
 
 
 def anime():
+    characterlist()
+    ch = input("Type the character's name to learn more about him.\n")
+    c = ch.lower()
+    #added character() and input into function, idea from aaron with zhenqian help
     while True:
+       # characterlist()
+       # c = input("Type the character's name to learn more about him.\n")
     #creating loop so that user can pick either of the 3 characters.
         if c == 'naruto':
             animenaruto(narutofile,delay=0.1,repeat=2)
             f = open('narutostats.txt', 'r') #opens my txt file with stats,
             file_contents=f.read() #it will not print if pasted into this code,
-            print(file_contents)# this is a good alternative
-            print("run the program again if you would like to see other characters")
-            break# this enables me to print content from txt file
+            print(file_contents)# this is a good alternative, prints stats
+            time.sleep(12)#allows user to read stats
+            os.system('clear')#clears screen
+            anime()#loops the function again, idea from travis
+
 
     # the next 2 elif statements will be a copy and paste of the naruto if statement, only difference will be the name of the files 
 
-        #elif c == 'kakashi':
-            #animekakashi(kakashifile,delay=0.1,repeat=25)
         elif c == 'sasuke':
             animesasuke(sasukefile,delay=0.1,repeat=2)
             f = open('sasukestat.txt', 'r')
             file_contents=f.read()
             print(file_contents)
-            print("run the program again if you would like to see other characters")
-            break
+            time.sleep(12)
+            os.system('clear')
+            anime()
+
+        elif c == 'quit': #allows user to quit the program
+            print("adios")
+            os.system('pkill -9 python3')
+            #this allows to breakout the loop within the loop since a simple 'break' will not terminate the code.
+            
         else:
-            print("ERROR ERROR...NEXT TIME SPELL THEIR NAME CORRECTLY...ERROR ERROR")
-            break
+            print(f"I don't know who {c} is lol...") 
+            #allows user to retype if incorrect input
+            time.sleep(2)
+            os.system('clear')
+            anime()
 anime()
