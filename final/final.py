@@ -20,7 +20,7 @@ narutofile= ["naruto6.txt","naruto7.txt","naruto8.txt","naruto9.txt","naruto10.t
 
 sasukefile= ["sasuke.txt","sasuke2.txt","sasuke3.txt","sasuke4.txt","sasuke5.txt","sasuke6.txt","sasuke7.txt","sasuke8.txt","sasuke9.txt","sasuke8.txt","sasuke9.txt"]
 
-kakashifile=["kakashi.txt","kakashi1.txt","kakashi2.txt","kakashi3.txt","kakashi4.txt","kakashi5.txt","kakashi6.txt","kakashi7.txt","kakashi8.txt","kakashi9.txt","kakashi10.txt","kakashi11.txt","kakashi12.txt","kakashi13.txt","kakashi14.txt"]
+kakashifile=["kakashi.txt","kakashi1.txt","kakashi2.txt","kakashi3.txt","kakashi4.txt","kakashi5.txt","kakashi6.txt","kakashi7.txt","kakashi8.txt","kakashi9.txt","kakashi10.txt","kakashi11.txt","kakashi12.txt", "kakashi14.txt","kakashi13.txt","kakashi14.txt"]
 
 def animator(filenames,delay=1,repeat=10):#creating animation function
     frames = [] #frame is inputed
@@ -50,7 +50,7 @@ def animenaruto(narutofile,delay=1,repeat=50):
             time.sleep(0.5)
             os.system('clear')
 #kakashi's animation
-def animekakashi(kakashifile,delay=1,repeat=20):
+def animekakashi(kakashifile,delay=1,repeat=50):
     frames=[]
 
     for name in kakashifile:
