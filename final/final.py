@@ -8,7 +8,7 @@
 
 #We will let individuals choose 3 or 4 if possible of choices from this project.
 
-import os #letting me pull from files and use the clear command
+import os #lets me use the clear command
 import time #putting a time limit for each frame
 import sys #allowing to me read txt files in the same folder
 
