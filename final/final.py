@@ -23,14 +23,14 @@ sasukefile= ["sasuke.txt","sasuke2.txt","sasuke3.txt","sasuke4.txt","sasuke5.txt
 kakashifile=["kakashi.txt","kakashi1.txt","kakashi2.txt","kakashi3.txt","kakashi4.txt","kakashi5.txt","kakashi6.txt","kakashi7.txt","kakashi8.txt","kakashi9.txt","kakashi10.txt","kakashi11.txt","kakashi12.txt", "kakashi14.txt","kakashi13.txt","kakashi14.txt"]
 
 def animator(filenames,delay=1,repeat=10):#creating animation function
-    frames = [] #frame is inputed
+    frames = [] #creating empty list of frames where loaded files will be inputed.
 
-    for name in filenames:
-        with open (name,"r",encoding="utf8") as f: #display output based on what is read from filenames
-            frames.append(f.readlines()) #adding frames ontop of another
-    for i in range(repeat): 
+    for name in filenames: #for each name in the filename ex. narutofile
+        with open (name,"r",encoding="utf8") as f: #display output based on terminal unicode
+            frames.append(f.readlines()) #adding frames ontop of another in the frames list
+    for i in range(repeat): #this allows me to repeat the art, what ever is inputed or x in "repeat=x", it will repeat that number of times.
         for frame in frames:
-            print("".join(frame))
+            print("".join(frame))#this joins all lines within txt file into 1 long string to print all text as 1. 
             time.sleep(0.025)#the speed of each frame
             os.system('clear')#for each frame, chat will clear itself that way it doesn't look messy.
 
