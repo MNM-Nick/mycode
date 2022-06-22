@@ -114,7 +114,7 @@ def anime():
        # c = input("Type the character's name to learn more about him.\n")
     #creating loop so that user can pick either of the 3 characters.
         if c == 'naruto':
-            animenaruto(narutofile,delay=0.1,repeat=2)
+            animenaruto(narutofile,delay=0.1,repeat=2) #making it loop twice and have it delay 0.1 second per frame.
             f = open('narutostats.txt', 'r') #opens my txt file with stats,
             file_contents=f.read() #it will not print if pasted into this code,
             print(file_contents)# this is a good alternative, prints stats
